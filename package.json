@@ -4,13 +4,14 @@
   "description": "to-do list app",
   "main": "script.ts",
   "scripts": {
-    "dev": "webpack serve --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+    "build": "webpack --mode production",
+    "dev": "webpack serve --mode development"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/darmijo15/todolist.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
