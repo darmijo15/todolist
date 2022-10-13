@@ -4,11 +4,13 @@ import { FASTElement, customElement, html, css, attr } from "@microsoft/fast-ele
     name: 'todo-item',
     template: html<TodoItem>`
         <div class='item'>
-            <div class='input'>user input</div>
-                <div class='buttons'>
-                    <button>edit</button>
-                    <button>clear</button>
-                </div>
+            <div class='input'>
+                <slot></slot>
+            </div>
+            <div class='buttons'>
+                <button>edit</button>
+                <button>clear</button>
+            </div>
         </div>
     `,
     styles: css`
@@ -40,6 +42,7 @@ import { FASTElement, customElement, html, css, attr } from "@microsoft/fast-ele
             padding: 8px 20px;
         }
     `,
+    shadowOptions: { mode: 'open' }
 })
 export class TodoItem extends FASTElement {
 
