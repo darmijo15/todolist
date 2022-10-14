@@ -8,8 +8,8 @@ import { FASTElement, customElement, html, css, attr } from "@microsoft/fast-ele
                 <slot></slot>
             </div>
             <div class='buttons'>
-                <button>edit</button>
-                <button>clear</button>
+                <button id="edit">edit</button>
+                <button id="clear">clear</button>
             </div>
         </div>
     `,
