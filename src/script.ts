@@ -10,10 +10,20 @@ localStorage.setItem('items', JSON.stringify(itemsArray));
 
 const data = JSON.parse(localStorage.getItem('items')!);
 
-function addItem(text:string ) {
+function addItem(text:string) {
     const newItem = document.createElement('todo-item');
+    newItem.setAttribute('id', `${text}`);
     newItem.innerHTML = text;
     body?.appendChild(newItem);
+
+    const clearButton = <HTMLButtonElement>newItem.shadowRoot?.querySelector('#clear');
+
+    clearButton.addEventListener('click', () => {
+        const item = itemsArray.indexOf(text);
+        itemsArray.splice(item, 1);
+        localStorage.setItem('items', JSON.stringify(itemsArray));
+        body?.removeChild(newItem);
+    });
 }
 
 form?.addEventListener('submit', (e) => {
@@ -28,5 +38,7 @@ form?.addEventListener('submit', (e) => {
 data.forEach((item:string) => {
     addItem(item);
 });
+
+console.log(localStorage);
 
 export * from './components/todo-item';
