@@ -1,4 +1,4 @@
-import { FASTElement, customElement, html, css, attr } from "@microsoft/fast-element";
+import { FASTElement, customElement, html, css } from "@microsoft/fast-element";
 
 @customElement({
     name: 'todo-item',
