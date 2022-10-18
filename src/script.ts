@@ -1,3 +1,5 @@
+import './style.css';
+
 const form = document.querySelector('form');
 const input = <HTMLInputElement>document.querySelector('#item');
 const body = document.querySelector('body');

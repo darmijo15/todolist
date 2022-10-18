@@ -18,14 +18,14 @@ import { FASTElement, customElement, html, css, attr } from "@microsoft/fast-ele
             display: flex;
             align-items: center;
             border: solid #aaa 2px;
-            width: 450px;
+            width: 500px;
             height: 60px;
         }
         
         .input {
             text-align: center;
             margin-left: 20px;;
-            width: 100px;
+            width: 200px;
             font-size: 20px;
         }
         
