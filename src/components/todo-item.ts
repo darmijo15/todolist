@@ -4,9 +4,7 @@ import { FASTElement, customElement, html, css } from "@microsoft/fast-element";
     name: 'todo-item',
     template: html<TodoItem>`
         <div class='item'>
-            <div class='input'>
-                <slot></slot>
-            </div>
+            <div class='userInput'></div>
             <div class='buttons'>
                 <button id="edit">edit</button>
                 <button id="clear">clear</button>

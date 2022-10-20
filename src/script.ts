@@ -15,8 +15,10 @@ const data = JSON.parse(localStorage.getItem('items')!);
 function addItem(text:string) {
     const newItem = document.createElement('todo-item');
     newItem.setAttribute('id', `${text}`);
-    newItem.innerHTML = text;
     body?.appendChild(newItem);
+
+    const userInput = <HTMLDivElement>newItem.shadowRoot?.querySelector('.userInput');
+    userInput.innerText = text;
 
     const clearButton = <HTMLButtonElement>newItem.shadowRoot?.querySelector('#clear');
 
@@ -40,7 +42,5 @@ form?.addEventListener('submit', (e) => {
 data.forEach((item:string) => {
     addItem(item);
 });
-
-console.log(localStorage);
 
 export * from './components/todo-item';
