@@ -21,6 +21,22 @@ function addItem(text:string) {
     userInput.innerText = text;
 
     const clearButton = <HTMLButtonElement>newItem.shadowRoot?.querySelector('#clear');
+    const editButton = <HTMLButtonElement>newItem.shadowRoot?.querySelector('#edit');
+
+    editButton.addEventListener('click', () => {
+        let currentSetting = editButton.innerText;
+        console.log(editButton.innerText);
+
+        if (currentSetting === 'edit') {
+            editButton.innerText = 'save';
+            userInput.contentEditable = 'true';
+            userInput.style.border = '1px solid #aaa';
+        } else {
+            editButton.innerText = 'edit';
+            userInput.contentEditable = 'false';
+            userInput.style.border = '';
+        }
+    })
 
     clearButton.addEventListener('click', () => {
         const item = itemsArray.indexOf(text);
