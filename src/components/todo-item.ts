@@ -20,7 +20,7 @@ import { FASTElement, customElement, html, css } from "@microsoft/fast-element";
             height: 60px;
         }
         
-        .input {
+        .userInput {
             text-align: center;
             margin-left: 20px;;
             width: 200px;
