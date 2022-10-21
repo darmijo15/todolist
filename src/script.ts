@@ -26,6 +26,7 @@ function addItem(text:string) {
     editButton.addEventListener('click', () => {
         let currentSetting = editButton.innerText;
         console.log(editButton.innerText);
+        console.log(userInput);
 
         if (currentSetting === 'edit') {
             editButton.innerText = 'save';
@@ -35,6 +36,11 @@ function addItem(text:string) {
             editButton.innerText = 'edit';
             userInput.contentEditable = 'false';
             userInput.style.border = '';
+
+            const newValue = userInput.innerText;
+            const itemIndex = itemsArray.indexOf(text);
+            itemsArray[itemIndex] = newValue;
+            localStorage.setItem('items', JSON.stringify(itemsArray));
         }
     })
 
