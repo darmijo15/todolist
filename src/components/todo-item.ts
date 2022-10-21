@@ -15,7 +15,8 @@ import { FASTElement, customElement, html, css } from "@microsoft/fast-element";
         .container {
             display: flex;
             align-items: center;
-            border: solid #aaa 2px;
+            border: solid #68bbff 2px;
+            border-radius: 2px;
             width: 500px;
             height: 60px;
         }
@@ -37,6 +38,7 @@ import { FASTElement, customElement, html, css } from "@microsoft/fast-element";
         
         button {
             font-size: 16px;
+            font-weight: bold;
             padding: 8px 20px;
         }
     `,
