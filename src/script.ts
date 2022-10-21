@@ -1,8 +1,8 @@
 import './style.css';
 
-const form = document.querySelector('form');
-const input = <HTMLInputElement>document.querySelector('#item');
-const body = document.querySelector('body');
+const form = <HTMLFormElement>document.querySelector('form');
+const input = <HTMLInputElement>document.querySelector('#submit-item');
+const body = <HTMLBodyElement>document.querySelector('body');
 
 let itemsArray = localStorage.getItem('items')
     ? JSON.parse(localStorage.getItem('items')!)
@@ -17,11 +17,11 @@ function addItem(text:string) {
     newItem.setAttribute('id', `${text}`);
     body?.appendChild(newItem);
 
-    const userInput = <HTMLDivElement>newItem.shadowRoot?.querySelector('.userInput');
+    const userInput = <HTMLDivElement>newItem.shadowRoot?.querySelector('.item-text');
     userInput.innerText = text;
 
-    const clearButton = <HTMLButtonElement>newItem.shadowRoot?.querySelector('#clear');
-    const editButton = <HTMLButtonElement>newItem.shadowRoot?.querySelector('#edit');
+    const clearButton = <HTMLButtonElement>newItem.shadowRoot?.querySelector('.clear');
+    const editButton = <HTMLButtonElement>newItem.shadowRoot?.querySelector('.edit');
 
     editButton.addEventListener('click', () => {
         let currentSetting = editButton.innerText;

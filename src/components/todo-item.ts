@@ -3,16 +3,16 @@ import { FASTElement, customElement, html, css } from "@microsoft/fast-element";
 @customElement({
     name: 'todo-item',
     template: html<TodoItem>`
-        <div class='item'>
-            <div class='userInput'></div>
+        <div class='container'>
+            <div class='item-text'></div>
             <div class='buttons'>
-                <button id="edit">edit</button>
-                <button id="clear">clear</button>
+                <button class="edit">edit</button>
+                <button class="clear">clear</button>
             </div>
         </div>
     `,
     styles: css`
-        .item {
+        .container {
             display: flex;
             align-items: center;
             border: solid #aaa 2px;
@@ -20,7 +20,7 @@ import { FASTElement, customElement, html, css } from "@microsoft/fast-element";
             height: 60px;
         }
         
-        .userInput {
+        .item-text {
             text-align: center;
             margin-left: 20px;;
             width: 200px;
