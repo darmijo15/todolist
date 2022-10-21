@@ -25,8 +25,6 @@ function addItem(text:string) {
 
     editButton.addEventListener('click', () => {
         let currentSetting = editButton.innerText;
-        console.log(editButton.innerText);
-        console.log(userInput);
 
         if (currentSetting === 'edit') {
             editButton.innerText = 'save';
